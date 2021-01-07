@@ -1,3 +1,3 @@
 # INSTRUCTIONS
 
-Make sure numpy library is installed, then, simply run the .py file.
+Ensure you have installed numpy, and dearpygui libraries. Next, run the bar_element_1D_gui.py file.
