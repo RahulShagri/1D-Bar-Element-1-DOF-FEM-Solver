@@ -59,7 +59,7 @@ def run_data_checks(sender, data):
                 return 0
 
             else:
-                log_info("Area, young's modulus, length, and force: OK", logger="log_window")
+                log_info("Area, young's modulus, and length: OK", logger="log_window")
 
                 if get_value("Type0_Q") < 0.0:
                     log_error("The displacement cannot be less than 0.", logger="log_window")
@@ -69,10 +69,16 @@ def run_data_checks(sender, data):
 
                 else:
                     log_info("Displacement: OK", logger="log_window")
-                    log_info("Solving...", logger="log_window")
-                    solve_button()
-                    log_info("Solution has been calculated!", logger="log_window")
-                    log_info("<---Solver terminated--->", logger="log_window")
+                    try:
+                        F = np.array(get_value("Type0_F").split(","))
+                        log_info("Nodal forces: OK", logger="log_window")
+                        log_info("Solving...", logger="log_window")
+                        solve_button()
+                        log_info("Solution has been calculated!", logger="log_window")
+                        log_info("<---Solver terminated--->", logger="log_window")
+
+                    except:
+                        log_error("Please enter valid values for nodal forces", logger="log_window")
 
 
         else:
@@ -140,8 +146,8 @@ def switch_solver(sender, data):
             with window("Type1_disp", label="4. Known and unknown nodal displacements", x_pos=10, y_pos=285, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
                 add_input_text("Type1_Q", label="Displacements", tip="Enter all known nodal displacements at each node and\nenter x for unknown displacements. Ex: 0,x,x,0.03\nNote: first nodal dispalcement will always be 0.")
 
-            with window("Type1_force", label="5. Known and unknown nodal forces", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
-                add_input_text("Type1_F", label="Forces", tip="Enter all known forces at each node and\nenter 0 for unknown forces. Ex: 0,-300,0,5000")
+            with window("Type1_force", label="5. Nodal forces", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
+                add_input_text("Type1_F", label="Forces", tip="Enter all known forces at each node.\nEx: 0,-300,0,5000")
 
     else:
         if (does_item_exist("Type0_matprop")):
@@ -160,8 +166,8 @@ def switch_solver(sender, data):
             with window( "Type0_disp", label="4. Free end displacement (if known)", x_pos=10, y_pos=285, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
                 add_input_float("Type0_Q", label="Displacement", tip="Enter 0 if free end displacement is unknown.")
 
-            with window("Type0_force", label="5. Free end force", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
-                add_input_float("Type0_F", label="Force", tip="Enter the tension or compression force acting on the free\nend of the bar (+ve for tension and -ve for compression).")
+            with window("Type0_force", label="5. Nodal forces", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
+                add_input_text("Type0_F", label="Forces", tip="Enter the tension or compression forces acting on the each node\n of the bar (+ve for tension and -ve for compression).\nEx. 0,-1000,0,5000")
 
 def switch_theme(sender, data):
     if sender == "light_mode":
@@ -311,8 +317,8 @@ with window("Type0_matprop", label="3. Material properties of the bar", x_pos=10
 with window("Type0_disp", label="4. Free end displacement (if known)", x_pos=10, y_pos=285, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
     add_input_float("Type0_Q", label="Displacement", tip="Enter 0 if free end displacement is unknown.")
 
-with window("Type0_force", label="5. Free end force", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
-    add_input_float("Type0_F", label="Force", tip="Enter the tension or compression force acting on the free\nend of the bar (+ve for tension and -ve for compression).")
+with window("Type0_force", label="5. Nodal forces", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
+    add_input_text("Type0_F", label="Forces", tip="Enter the tension or compression forces acting on the each node\n of the bar (+ve for tension and -ve for compression).\nEx. 0,-1000,0,5000")
 
 with window("Solve", x_pos=10, y_pos=425, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=46, no_title_bar=True):
     add_button("Solve!", width=438, height=34)

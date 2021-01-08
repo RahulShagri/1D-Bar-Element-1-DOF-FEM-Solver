@@ -14,7 +14,7 @@ A_test = 200
 E_test = 200000.0
 L_test = 200
 Q_test = 0
-F_test = 100.0'''
+F_test = "0,0,90000"'''
 
 def solve(type, elements, A, E, L, Q, F):
 
@@ -36,8 +36,8 @@ def solve(type, elements, A, E, L, Q, F):
 
         #Global_Q = Global_Q.reshape(elements + 1, 1)
 
-        Global_F = np.zeros((elements+1, 1))
-        Global_F[elements] = F
+        Global_F = np.array(F.split(","))
+        Global_F = Global_F.reshape(elements + 1, 1).astype(float)
 
         print(Global_F)
 
@@ -161,6 +161,7 @@ def solve(type, elements, A, E, L, Q, F):
     print(stress)
     print("\nThe strain matrix is:")
     print(strain)
+
 
     return Global_Q.flatten(), Global_F.reshape(1, elements+1).flatten(), stress, strain
 
