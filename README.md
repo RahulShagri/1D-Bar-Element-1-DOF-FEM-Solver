@@ -1,4 +1,4 @@
-#About
+# About
 
 The solver assembles the global nodal force matrix, global element stiffness matrix, and the global nodal displacement matrix and uses the elimination approach on the global relationship after applying all the boundary conditions provided by the user to solve for the unknown displacements.
 
