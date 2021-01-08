@@ -162,7 +162,6 @@ def solve(type, elements, A, E, L, Q, F):
     print("\nThe strain matrix is:")
     print(strain)
 
-
     return Global_Q.flatten(), Global_F.reshape(1, elements+1).flatten(), stress, strain
 
 #solve(type_test, elements_test, A_test, E_test, L_test, Q_test, F_test)

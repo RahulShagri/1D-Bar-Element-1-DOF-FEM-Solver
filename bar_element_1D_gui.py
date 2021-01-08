@@ -5,7 +5,6 @@ import webbrowser
 from bar_element_1D_solver import *
 
 
-
 def solve_button():
     clear_table("Displacements table")
     clear_table("Element stress table")
