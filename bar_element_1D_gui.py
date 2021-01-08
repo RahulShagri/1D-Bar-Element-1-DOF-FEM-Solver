@@ -146,7 +146,7 @@ def switch_solver(sender, data):
                 add_input_text("Type1_Q", label="Displacements", tip="Enter all known nodal displacements at each node and\nenter x for unknown displacements. Ex: 0,x,x,0.03\nNote: first nodal dispalcement will always be 0.")
 
             with window("Type1_force", label="5. Nodal forces", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
-                add_input_text("Type1_F", label="Forces", tip="Enter all known forces at each node.\nEx: 0,-300,0,5000")
+                add_input_text("Type1_F", label="Forces", tip="Enter all known forces at each node without spaces.\nEx: 0,-300,0,5000")
 
     else:
         if (does_item_exist("Type0_matprop")):
@@ -166,13 +166,13 @@ def switch_solver(sender, data):
                 add_input_float("Type0_Q", label="Displacement", tip="Enter 0 if free end displacement is unknown.")
 
             with window("Type0_force", label="5. Nodal forces", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
-                add_input_text("Type0_F", label="Forces", tip="Enter the tension or compression forces acting on the each node\n of the bar (+ve for tension and -ve for compression).\nEx. 0,-1000,0,5000")
+                add_input_text("Type0_F", label="Forces", tip="Enter the tension or compression forces acting at each node\nof the bar without spaces(+ve for tension and -ve for compression).\nEx. 0,-1000,0,5000")
 
 def switch_theme(sender, data):
     if sender == "light_mode":
 
         delete_item("light_mode")
-        add_image_button("dark_mode", "dark_mode.png", width=22, height=22, tip="Dark mode", callback=switch_theme, parent="Extras")
+        add_image_button("dark_mode", "icons/dark_mode.png", width=22, height=22, tip="Dark mode", callback=switch_theme, parent="Extras")
 
         set_theme("Light")
 
@@ -216,7 +216,7 @@ def switch_theme(sender, data):
     else:
 
         delete_item("dark_mode")
-        add_image_button("light_mode", "light_mode.png", width=22, height=22, tip="Light mode", callback=switch_theme, parent="Extras")
+        add_image_button("light_mode", "icons/light_mode.png", width=22, height=22, tip="Light mode", callback=switch_theme, parent="Extras")
 
         set_theme("Grey")
 
@@ -305,7 +305,7 @@ with window("1. Initial Setup", x_pos=10, y_pos=10, no_resize=True, no_move=True
 
 with window("2. Discretization", x_pos=10, y_pos=100, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
     add_spacing()
-    add_input_int("Number of elements", default_value=1)
+    add_input_int("Number of elements", default_value=1, tip="Number of elements should always be greater than or equal to 1.")
 
 with window("Type0_matprop", label="3. Material properties of the bar", x_pos=10, y_pos=170, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=105):
     add_spacing()
@@ -317,7 +317,7 @@ with window("Type0_disp", label="4. Free end displacement (if known)", x_pos=10,
     add_input_float("Type0_Q", label="Displacement", tip="Enter 0 if free end displacement is unknown.")
 
 with window("Type0_force", label="5. Nodal forces", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
-    add_input_text("Type0_F", label="Forces", tip="Enter the tension or compression forces acting on the each node\n of the bar (+ve for tension and -ve for compression).\nEx. 0,-1000,0,5000")
+    add_input_text("Type0_F", label="Forces", tip="Enter the tension or compression forces acting at each node\nof the bar without spaces (+ve for tension and -ve for compression).\nEx. 0,-1000,0,5000")
 
 with window("Solve", x_pos=10, y_pos=425, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=46, no_title_bar=True):
     add_button("Solve!", width=438, height=34)
@@ -341,11 +341,11 @@ with window("Results", x_pos=470, y_pos=10, no_resize=True, no_move=True, no_col
     add_table("Element strain table", ["Element number", "Strain"], width=285, height=212)
 
 with window("Extras", x_pos=775, y_pos=10, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=42, height=78, no_title_bar=True):
-    add_image_button("Help", "help.png", width=22, height=22, tip="Get more information on GitHub.", callback=open_github)
+    add_image_button("Help", "icons/help.png", width=22, height=22, tip="Get more information on GitHub.", callback=open_github)
     add_spacing()
     add_separator()
     add_spacing()
-    add_image_button("dark_mode", "dark_mode.png", width=22, height=22, tip="Dark mode", callback=switch_theme)
+    add_image_button("dark_mode", "icons/dark_mode.png", width=22, height=22, tip="Dark mode", callback=switch_theme)
 
 
 start_dearpygui(primary_window="Main")
