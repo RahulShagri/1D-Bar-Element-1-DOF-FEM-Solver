@@ -16,10 +16,10 @@ def solve_button():
     else:
         Q, F, Stress, Strain = solve(get_value("Element type"), get_value("Number of elements"), get_value("A1"), get_value("E1"), get_value("L1"), get_value("Type1_Q"), get_value("Type1_F"))
 
-    Q = np.round(Q, 4)
-    F = np.round(F, 4)
-    Stress = np.round(Stress, 4)
-    Strain = np.round(Strain, 4)
+    Q = np.round(Q, 5)
+    F = np.round(F, 5)
+    Stress = np.round(Stress, 5)
+    Strain = np.round(Strain, 5)
 
     nodes = list(range(1, get_value("Number of elements")+2))
     elements = nodes[0:-1]
