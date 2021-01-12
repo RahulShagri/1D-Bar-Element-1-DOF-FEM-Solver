@@ -1,18 +1,20 @@
-# About
+#1 Dimension 1 Degree of Freedom Bar Element FEM Solver
 
-The solver assembles the global nodal force vector, global element stiffness matrix, and the global nodal displacement vector and uses the elimination approach on the global relationship after applying all the boundary conditions provided by the user to solve for the unknown displacements.
+<H1>About</H1>
 
-<b>Note: Only problems with bar elements connected in series and having 1D forces acting parallel to the axis of the bar can be analysed.</b>
+This solver can be used to analyse 1 degree of freedom of 1 dimension problems with bar elements connected in series and having 1D forces acting parallel to the axis of the bar. It uses the direct stiffness method and assembles the global nodal force vector, global element stiffness matrix, and the global nodal displacement vector and uses the elimination approach on the global relationship after applying all the boundary conditions provided by the user to solve for the unknown nodal displacements.
 
 
-# Instructions
+<H1>Instructions</H1>
 
-Ensure you have the following libraries installed in python to run the solver:
+Ensure you have the following libraries installed in python before you run the solver:
     
 1. NumPy 
 2. DearPyGUI 
    
-Then, run the 1D_Bar_Element_FEM_Solver.py file.
+Then, run the <i>1D_Bar_Element_FEM_Solver.py</i> file.
+
+<i><b>Note: The user has to make sure the values entered have the correct units. The software does not convert any values entered. Results are obtained based on the values that are entered without converting them to different units. In the following examples, the displacements are in mm and stresses are in MPa.</b></i>
 
 
 <H3>Example Problem 1</H3>
@@ -20,6 +22,7 @@ Then, run the 1D_Bar_Element_FEM_Solver.py file.
 ![Example 1 Diagram](images/Example_1_diag.png)
 
 <H4>Step 1:</H4>
+
 Solving for a uniform bar element that is divided into 3 elements with a force acting in the positive x direction.
 
 Known values are:
@@ -31,24 +34,25 @@ Known values are:
 
 
 <H4>Step 2:</H4>
+
 Enter the respective values in the text boxes provided. 
 
-<i><b>Note: The user has to make sure the values entered have the correct units. The software does not convert any values entered.</b></i>
-
 <H4>Step 3:</H4>
+
 Hit the solve button.
 
 <H4>Step 4:</H4>
+
 Ensure no errors are shown in the log window.
 
 <H4>Step 5:</H4>
+
 Analyse the results in the results window.
 
 1. Displacement values in the table are respective nodal displacements in the ascending sequence.
 2. Stress values in the table are respective element stresses in the ascending sequence.
 3. Strain values in the table are respective element strains in the ascending sequence.
 
-<i><b>Note: Results are obtained based on the values that are entered without converting them to different units. In  this example, the displacements are in mm and stresses are in MPa.</b></i>
 
 ![Example 1 screenshot](images/Example_1.png)
 
@@ -58,6 +62,7 @@ Analyse the results in the results window.
 ![Example 1 Diagram](images/Example_2_diag.png)
 
 <H4>Step 1:</H4>
+
 Solving for multiple bar elements attached in series with two 1D forces acting.
 
 Known values are:
@@ -76,23 +81,24 @@ Known values are:
 | 4 | x (Unknown) | 15000 N
 
 <H4>Step 2:</H4>
+
 Enter the respective values in the text boxes provided. 
 
-<i><b>Note: The user has to make sure the values entered have the correct units. The software does not convert any values entered.</b></i>
-
 <H4>Step 3:</H4>
+
 Hit the solve button.
 
 <H4>Step 4:</H4>
+
 Ensure no errors are shown in the log window.
 
 <H4>Step 5:</H4>
+
 Analyse the results in the results window.
 
 1. Displacement values in the table are respective nodal displacements in the ascending sequence.
 2. Stress values in the table are respective element stresses in the ascending sequence.
 3. Strain values in the table are respective element strains in the ascending sequence.
 
-<i><b>Note: Results are obtained based on the values that are entered without converting them to different units. In  this example, the displacements are in mm and stresses are in MPa.</b></i>
 
 ![Example 1 screenshot](images/Example_2.png)
