@@ -1,14 +1,21 @@
 # About
 
-The solver assembles the global nodal force matrix, global element stiffness matrix, and the global nodal displacement matrix and uses the elimination approach on the global relationship after applying all the boundary conditions provided by the user to solve for the unknown displacements.
+The solver assembles the global nodal force vector, global element stiffness matrix, and the global nodal displacement vector and uses the elimination approach on the global relationship after applying all the boundary conditions provided by the user to solve for the unknown displacements.
+
+<b>Note: Only problems with bar elements connected in series and having 1D forces acting parallel to the axis of the bar can be analysed.</b>
 
 
 # Instructions
 
-Ensure you have installed the python, numpy, and DearPyGui libraries. Next, run the 1D_Bar_Element_FEM_Solver.py file.
+Ensure you have the following libraries installed in python to run the solver:
+    
+1. NumPy 
+2. DearPyGUI 
+   
+Then, run the 1D_Bar_Element_FEM_Solver.py file.
 
 
-<H3>Example 1</H3>
+<H3>Example Problem 1</H3>
 
 ![Example 1 Diagram](images/Example_1_diag.png)
 
@@ -46,7 +53,7 @@ Analyse the results in the results window.
 ![Example 1 screenshot](images/Example_1.png)
 
 
-<H3>Example 2</H3>
+<H3>Example Problem 2</H3>
 
 ![Example 1 Diagram](images/Example_2_diag.png)
 
