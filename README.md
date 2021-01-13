@@ -6,13 +6,18 @@ This solver can be used to analyse 1 degree of freedom of 1 dimension problems w
 
 
 <H1>Instructions</H1>
-
-Ensure you have the following libraries installed in python before you run the solver:
-    
-1. NumPy 
-2. DearPyGUI 
+ 
+1. Make sure you have Python 3 installed and working.
    
-Then, run the <i>1D_Bar_Element_FEM_Solver.py</i> file.
+2. Clone the repo:
+
+```git clone https://github.com/RahulShagri/1D-Bar-Element-1-DOF-FEM-Solver.git```
+
+3. Install prerequisites using pip, preferably in a new environment:
+
+```pip install -r requirements.txt```
+
+4. Run the <i>1D_Bar_Element_FEM_Solver.py</i> file.
 
 <i><b>Note: The user has to make sure the values entered have the correct units. The software does not convert any values entered. Results are obtained based on the values that are entered without converting them to different units. In the following examples, the displacements are in mm and stresses are in MPa.</b></i>
 
@@ -102,3 +107,8 @@ Analyse the results in the results window.
 
 
 ![Example 1 screenshot](images/Example_2.png)
+
+
+<H2>Contact</H2>
+
+You can contact me using the messaging form or the emailing option on my [engineering portfolio website](https://rahulshagri.github.io/).
