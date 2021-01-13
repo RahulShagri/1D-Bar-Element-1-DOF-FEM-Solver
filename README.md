@@ -1,8 +1,8 @@
-# 1 Dimension 1 Degree of Freedom Bar Element FEM Solver
+# 1 Dimensional Bar Element with 1 Degree of Freedom FEM Solver
 
 <H1>About</H1>
 
-This solver can be used to analyse 1 degree of freedom of 1 dimension problems with bar elements connected in series and having 1D forces acting parallel to the axis of the bar. It uses the direct stiffness method and assembles the global nodal force vector, global element stiffness matrix, and the global nodal displacement vector and uses the elimination approach on the global relationship after applying all the boundary conditions provided by the user to solve for the unknown nodal displacements.
+This solver can be used to analyse 1 degree of freedom of 1 dimensional problems with bar elements connected in series and having 1D forces acting parallel to the axis of the bar. It uses the direct stiffness method and assembles the global nodal force vector, global element stiffness matrix, and the global nodal displacement vector and uses the elimination approach on the global relationship after applying all the boundary conditions provided by the user to solve for the unknown nodal displacements.
 
 
 <H1>Instructions</H1>

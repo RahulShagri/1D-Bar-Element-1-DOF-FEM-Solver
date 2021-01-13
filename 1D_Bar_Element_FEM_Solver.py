@@ -139,11 +139,11 @@ def switch_solver(sender, data):
             with window("Type1_matprop", label="3. Material Properties of each element", x_pos=10, y_pos=170,
                         no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=105):
                 add_input_text("A1", label="Cross-sectional area",
-                               tip="Enter the area of cross section of each element without spaces.\nEx: 100,150,450")
+                               tip="Enter the area of cross section of each element.\nEx: 100,150,450")
                 add_input_text("E1", label="Young's modulus",
-                               tip="Enter the young's modulus of each element without spaces.\nEx: 100,150,450")
+                               tip="Enter the young's modulus of each element.\nEx: 100,150,450")
                 add_input_text("L1", label="Length",
-                               tip="Enter length of each element without spaces.\nEx: 100,150,450")
+                               tip="Enter length of each element.\nEx: 100,150,450")
 
             with window("Type1_disp", label="4. Known and unknown nodal displacements", x_pos=10, y_pos=285,
                         no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450, height=60):
@@ -154,7 +154,7 @@ def switch_solver(sender, data):
             with window("Type1_force", label="5. Nodal forces", x_pos=10, y_pos=355, no_resize=True, no_move=True,
                         no_collapse=True, no_close=True, width=450, height=60):
                 add_input_text("Type1_F", label="Forces",
-                               tip="Enter all known forces at each node without spaces.\nEx: 0,-300,0,5000")
+                               tip="Enter all known forces at each node.\nEx: 0,-300,0,5000")
 
     else:
         if does_item_exist("Type0_matprop"):
@@ -341,7 +341,7 @@ with window("Type0_disp", label="4. Free end displacement (if known)", x_pos=10,
 with window("Type0_force", label="5. Nodal forces", x_pos=10, y_pos=355, no_resize=True, no_move=True, no_collapse=True,
             no_close=True, width=450, height=60):
     add_input_text("Type0_F", label="Forces",
-                   tip="Enter the tension or compression forces acting at each node\nof the bar without spaces (+ve "
+                   tip="Enter the tension or compression forces acting at each node\nof the bar (+ve "
                        "for tension and -ve for compression).\nEx. 0,-1000,0,5000")
 
 with window("Solve", x_pos=10, y_pos=425, no_resize=True, no_move=True, no_collapse=True, no_close=True, width=450,
