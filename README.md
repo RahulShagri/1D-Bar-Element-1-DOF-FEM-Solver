@@ -1,4 +1,4 @@
-#1 Dimension 1 Degree of Freedom Bar Element FEM Solver
+# 1 Dimension 1 Degree of Freedom Bar Element FEM Solver
 
 <H1>About</H1>
 
