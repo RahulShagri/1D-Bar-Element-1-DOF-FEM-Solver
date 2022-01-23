@@ -1,6 +1,6 @@
 # 1 Dimensional Bar Element with 1 Degree of Freedom FEM Solver
 
-__*Note: Since the release of this app, Dear PyGui has been updated considerably. This app will not run in the newer versions of Dear PyGui. Please note that this app is not being maintained currently.*__
+⚠️ __*Note: Since the release of this app, Dear PyGui has been updated considerably. This app will not run in the newer versions of Dear PyGui. Please note that this app is not being maintained currently.*__
 
 <H1>About</H1>
 
